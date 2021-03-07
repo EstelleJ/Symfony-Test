@@ -1,0 +1,6 @@
+#accueil {
+    height: 100vh;
+    background: url('../../img/index/city-night.jpeg') no-repeat center center;
+    background-size: cover;
+    padding: 0;
+}

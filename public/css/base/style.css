@@ -29,3 +29,18 @@ header {
     left: 0;
     right: 0;
 }
+
+.titres {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titres h1 {
+    margin-bottom: 5px;
+    font-family: "Raleway";
+    font-weight: 800;
+}
+
+.titres h2 {
+    letter-spacing: 0.5ch;
+}

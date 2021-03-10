@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaires dynamiques - Les coiffeurs{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/coiffeur/style.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <section id="bandeau">
+
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="titres">
+                <h1>Utilisation des formulaires dynamiques.</h1>
+                <h2>SYMFONY - AJAX</h2>
+            </div>
+
+            <div class="coiffeurs">
+                {% for coiffeur in coiffeurs %}
+                    <div class="coiffeur">
+                        <div class="bloc-img">
+                            <img src="{{ asset('img/coiffeurs/miniature.jpg') }}">
+                        </div>
+
+                        <div class="bloc-texte">
+                            <h3>{{ coiffeur.titre }}</h3>
+
+                            {# <div class="texte">
+                                <p>
+                                    {{ coiffeur.texte|truncate(120) }}
+                                </p>
+                            </div> #}
+
+                            <div class="lien">
+                                <a href="{{ path('modifier_coiffeur', {'slug': coiffeur.slug , 'id': coiffeur.id }) }}">Modifier la ville</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

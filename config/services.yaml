@@ -29,3 +29,31 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    admin.region:
+        class: App\Admin\RegionAdmin
+        arguments: [~, App\Entity\Region, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Localisations, label: Region }
+        public: true
+
+    admin.departement:
+        class: App\Admin\DepartementAdmin
+        arguments: [~, App\Entity\Departement, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Localisations, label: Departement }
+        public: true
+
+    admin.ville:
+        class: App\Admin\VilleAdmin
+        arguments: [~, App\Entity\Ville, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Localisations, label: Ville }
+        public: true
+
+    admin.coiffeur:
+        class: App\Admin\CoiffeurAdmin
+        arguments: [~, App\Entity\Coiffeur, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Coiffeurs, label: Coiffeurs, on_top: true }
+        public: true

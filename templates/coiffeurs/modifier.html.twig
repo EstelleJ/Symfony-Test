@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier - Les coiffeurs{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/coiffeur/style.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <section id="bandeau">
+
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="titres">
+                <h1>Utilisation des formulaires dynamiques.</h1>
+                <h2>SYMFONY - AJAX</h2>
+            </div>
+
+            <div class="formulaire">
+                <h3>Définissez la ville du salon de coiffure {{ coiffeur.titre }}</h3>
+
+                {{ form_start(form) }}
+
+                    {{ form_errors(form.region) }}
+                    {{ form_widget(form.region) }}
+
+                    {{ form_widget(form.submit) }}
+
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="{{ asset('css/coiffeur/style.css') }}">
 {% endblock %}
 
-
 {% block body %}
+
     <section id="bandeau">
 
     </section>
@@ -21,7 +21,15 @@
 
             <div class="formulaire">
                 <h3>Définissez la ville du salon de coiffure {{ coiffeur.titre }}</h3>
+
+                {{ include('coiffeur/_form.html.twig', {'button_label': 'Update'}) }}
+
+                <a href="{{ path('coiffeurs') }}">Retourner aux salons</a>
+
+                {# {{ include('coiffeur/_delete_form.html.twig') }} #}
+
             </div>
         </div>
     </section>
 {% endblock %}
+

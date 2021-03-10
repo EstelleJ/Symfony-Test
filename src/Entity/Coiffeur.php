@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CoiffeurRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CoiffeurRepository::class)
@@ -30,6 +31,7 @@ class Coiffeur
 
     /**
      * @ORM\ManyToOne(targetEntity=Ville::class, inversedBy="coiffeurs")
+     * @Assert\NotBlank()
      */
     private $ville;
 
@@ -43,6 +45,12 @@ class Coiffeur
     {
         return $this->id;
     }
+
+    public function __toString(): string
+    {
+        return $this->titre;
+    }
+
 
     public function getTitre(): ?string
     {

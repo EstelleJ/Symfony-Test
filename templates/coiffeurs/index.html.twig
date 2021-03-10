@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="{{ asset('css/coiffeur/style.css') }}">
 {% endblock %}
 
+
 {% block body %}
-     <section id="bandeau">
+    <section id="bandeau">
 
     </section>
 
@@ -27,6 +28,12 @@
 
                         <div class="bloc-texte">
                             <h3>{{ coiffeur.titre }}</h3>
+
+                            {# <div class="texte">
+                                <p>
+                                    {{ coiffeur.texte|truncate(120) }}
+                                </p>
+                            </div> #}
 
                             <div class="lien">
                                 <a href="{{ path('modifier_coiffeur', {'slug': coiffeur.slug , 'id': coiffeur.id }) }}">Modifier la ville</a>
